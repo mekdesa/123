@@ -1,0 +1,27 @@
+#!/bin/bash
+clear
+RANGE=60
+num=$RANDOM
+let "num %= $RANGE"
+counter=0
+guess=-1
+while [ " $guess" != "$num" ]
+do
+echo -n "I am thinking of a number between 1 and 60. Enter your guess:"
+read guess
+if [ "$guess" = "" ]
+then
+echo "Please enter a number."
+elif
+[ "$guess" = "$num" ]
+then
+echo "congragulations!$guess is the correct answer!"
+elif
+[ "$guess" -gt "$num" ]
+then
+echo "The secret number is greater than your guess. Try again."
+else
+echo "The secret number is smaller than your guess. Try again."
+fi
+done
+~ 
